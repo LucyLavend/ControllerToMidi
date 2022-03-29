@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Code/ControllerInstrument.cs" type="Script" id=1]
 
@@ -13,8 +13,11 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.482353, 0.470588, 0.537255, 1 )
+
 [sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.42152, 0.3984, 0.48, 1 )
+bg_color = Color( 0.138696, 0.133301, 0.152344, 1 )
 
 [sub_resource type="Theme" id=2]
 
@@ -66,22 +69,34 @@ margin_right = 131.0
 margin_bottom = 640.0
 columns = 2
 
-[node name="Button" type="Button" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/GridContainer"]
+[node name="Guitar" type="Button" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/GridContainer"]
 margin_right = 52.0
-margin_bottom = 20.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
 text = "Guitar"
 
-[node name="Button2" type="Button" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/GridContainer"]
+[node name="Controller" type="Button" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/GridContainer"]
 margin_left = 56.0
 margin_right = 131.0
-margin_bottom = 20.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
 text = "Controller"
 
-[node name="Button3" type="Button" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/GridContainer"]
-margin_top = 24.0
+[node name="DJPad" type="Button" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/GridContainer"]
+margin_top = 104.0
 margin_right = 52.0
-margin_bottom = 44.0
+margin_bottom = 204.0
+rect_min_size = Vector2( 0, 100 )
 text = "DJ pad"
+
+[node name="ControllerNumber" type="Label" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/GridContainer"]
+margin_left = 56.0
+margin_top = 147.0
+margin_right = 131.0
+margin_bottom = 161.0
+custom_styles/normal = SubResource( 4 )
+text = "#1"
+align = 1
 
 [node name="Panel" type="Panel" parent="MarginContainer/Panel/MarginContainer/HSplitContainer"]
 margin_left = 139.0
@@ -93,47 +108,99 @@ size_flags_vertical = 3
 custom_styles/panel = SubResource( 3 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 2
-custom_constants/margin_right = 7
-custom_constants/margin_top = 7
-custom_constants/margin_left = 7
-custom_constants/margin_bottom = 7
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
 
-[node name="GridContainer2" type="GridContainer" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 82.0
-margin_bottom = 99.0
+[node name="Guitars" type="GridContainer" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1041.0
+margin_bottom = 620.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = SubResource( 2 )
+custom_constants/vseparation = 20
 
-[node name="Button" type="Button" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer/GridContainer2"]
-margin_right = 75.0
-margin_bottom = 20.0
+[node name="Button" type="Button" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer/Guitars"]
+margin_right = 1021.0
+margin_bottom = 290.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Guitar"
 
-[node name="Button2" type="Button" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer/GridContainer2"]
+[node name="Button2" type="Button" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer/Guitars"]
+margin_top = 310.0
+margin_right = 1021.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Bass"
+
+[node name="Controllers" type="GridContainer" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer"]
+visible = false
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1041.0
+margin_bottom = 620.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 2 )
+custom_constants/vseparation = 20
+
+[node name="Button" type="Button" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer/Controllers"]
+margin_right = 75.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Drums"
+
+[node name="Button2" type="Button" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer/Controllers"]
 margin_top = 24.0
 margin_right = 75.0
 margin_bottom = 44.0
-text = "Controller"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Arp"
 
-[node name="Button3" type="Button" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer/GridContainer2"]
-margin_top = 48.0
-margin_right = 75.0
-margin_bottom = 68.0
-text = "DJ pad"
-
-[node name="Button4" type="Button" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer/GridContainer2"]
-margin_top = 72.0
-margin_right = 75.0
-margin_bottom = 92.0
-text = "DJ pad"
-
-[node name="ControllerNumber" type="Label" parent="MarginContainer/Panel/MarginContainer"]
+[node name="DJPad" type="GridContainer" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer"]
+visible = false
 margin_left = 20.0
-margin_top = 333.0
-margin_right = 1220.0
-margin_bottom = 347.0
-text = "#1"
+margin_top = 20.0
+margin_right = 1041.0
+margin_bottom = 620.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource( 2 )
+custom_constants/vseparation = 20
+
+[node name="Button" type="Button" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer/DJPad"]
+margin_right = 75.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Pad"
+
+[node name="Button2" type="Button" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer/DJPad"]
+margin_top = 24.0
+margin_right = 75.0
+margin_bottom = 44.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Pad 2"
+
+[connection signal="pressed" from="MarginContainer/Panel/MarginContainer/HSplitContainer/GridContainer/Guitar" to="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer/Guitars" method="show"]
+[connection signal="pressed" from="MarginContainer/Panel/MarginContainer/HSplitContainer/GridContainer/Guitar" to="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer/Controllers" method="hide"]
+[connection signal="pressed" from="MarginContainer/Panel/MarginContainer/HSplitContainer/GridContainer/Guitar" to="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer/DJPad" method="hide"]
+[connection signal="pressed" from="MarginContainer/Panel/MarginContainer/HSplitContainer/GridContainer/Controller" to="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer/Guitars" method="hide"]
+[connection signal="pressed" from="MarginContainer/Panel/MarginContainer/HSplitContainer/GridContainer/Controller" to="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer/Controllers" method="show"]
+[connection signal="pressed" from="MarginContainer/Panel/MarginContainer/HSplitContainer/GridContainer/Controller" to="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer/DJPad" method="hide"]
+[connection signal="pressed" from="MarginContainer/Panel/MarginContainer/HSplitContainer/GridContainer/DJPad" to="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer/Guitars" method="hide"]
+[connection signal="pressed" from="MarginContainer/Panel/MarginContainer/HSplitContainer/GridContainer/DJPad" to="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer/Controllers" method="hide"]
+[connection signal="pressed" from="MarginContainer/Panel/MarginContainer/HSplitContainer/GridContainer/DJPad" to="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer/DJPad" method="show"]

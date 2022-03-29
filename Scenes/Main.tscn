@@ -1,7 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Code/Testing.cs" type="Script" id=1]
 [ext_resource path="res://Scenes/ControllerCard.tscn" type="PackedScene" id=2]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.294118, 0.282353, 0.34902, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.121569, 0.121569, 0.145098, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Odin Rounded - Regular.otf"
@@ -13,6 +25,10 @@ font_data = SubResource( 1 )
 
 [sub_resource type="Theme" id=3]
 default_font = SubResource( 2 )
+Button/styles/focus = SubResource( 4 )
+Button/styles/hover = SubResource( 4 )
+Button/styles/normal = SubResource( 4 )
+Button/styles/pressed = SubResource( 4 )
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -63,6 +79,7 @@ anchor_bottom = 0.0
 margin_left = 636.0
 margin_right = 1268.0
 margin_bottom = 399.0
+ID = 1
 
 [node name="Row2" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/Rows"]
 margin_top = 403.0
@@ -77,6 +94,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 632.0
 margin_bottom = 400.0
+ID = 2
 
 [node name="C4" parent="VBoxContainer/ScrollContainer/Rows/Row2" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -84,6 +102,7 @@ anchor_bottom = 0.0
 margin_left = 636.0
 margin_right = 1268.0
 margin_bottom = 400.0
+ID = 3
 
 [node name="Row3" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/Rows"]
 margin_top = 807.0
@@ -98,6 +117,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 632.0
 margin_bottom = 400.0
+ID = 4
 
 [node name="C6" parent="VBoxContainer/ScrollContainer/Rows/Row3" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -105,6 +125,7 @@ anchor_bottom = 0.0
 margin_left = 636.0
 margin_right = 1268.0
 margin_bottom = 400.0
+ID = 5
 
 [node name="Row4" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/Rows"]
 margin_top = 1211.0
@@ -119,6 +140,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 632.0
 margin_bottom = 400.0
+ID = 6
 
 [node name="C8" parent="VBoxContainer/ScrollContainer/Rows/Row4" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -126,3 +148,4 @@ anchor_bottom = 0.0
 margin_left = 636.0
 margin_right = 1268.0
 margin_bottom = 400.0
+ID = 7
