@@ -12,6 +12,16 @@ public class ControllerInstrument : Control
     [Export]
     Color BGColor = Colors.LightCoral;
 
+    public enum controllerType
+    {
+        Controller,
+        Guitar,
+        DJPad,
+        Undifined
+    }
+
+    controllerType currentControllerType = controllerType.Undifined;
+
     int midiChannel;
     string port = "controller port";
     Label debugText;
@@ -33,7 +43,7 @@ public class ControllerInstrument : Control
     private void OnEventSent(object sender, MidiEventSentEventArgs e)
     {
         var midiDevice = (MidiDevice)sender;
-        GD.Print($"Event sent to '{midiDevice.Name}' at {DateTime.Now}: {e.Event}");
+        // GD.Print($"Event sent to '{midiDevice.Name}' at {DateTime.Now}: {e.Event}");
         debugText.Text = $"Event sent to '{midiDevice.Name}': {e.Event}";
     }
 
@@ -47,15 +57,16 @@ public class ControllerInstrument : Control
         // ListenForInput("C1BL", rootNote + 8);
 
         // ListenForAnalog("C1LeftStickUp", 80);
-
-        ListenForInput("C1A", rootNote);
-        ListenForInput("C1B", rootNote + 2);
-        ListenForInput("C1Y", rootNote + 3);
-        ListenForInput("C1X", rootNote + 5);
-        ListenForInput("C1BL", rootNote + 7);
-        ListenForInput("C1BL", rootNote + 8);
-
-        ListenForAnalog("Tilt", 80);
+        if (currentControllerType == controllerType.Controller)
+        {
+            ListenForInput("C1B1", rootNote);
+            ListenForInput("C1B2", rootNote + 2);
+            ListenForInput("C1B3", rootNote + 3);
+            ListenForInput("C1B4", rootNote + 5);
+            ListenForInput("C1B5", rootNote + 7);
+            ListenForInput("C1B6", rootNote + 8);
+        }
+        GD.Print(currentControllerType);
 
         //GD.Print(Input.GetActionStrength("Whammy"));
     }
@@ -116,9 +127,15 @@ public class ControllerInstrument : Control
         }
     }
 
-    public void SetMidiChannel(int channel)
+    public void ChangeMidiChannel(int channel)
     {
         midiChannel = channel;
+        GetNode<Label>("MarginContainer/Panel/MarginContainer/HSplitContainer/GridContainer/ChannelNumber").Text = "Ch: " + (midiChannel + 1);
+    }
+
+    public void ChangeControllerType(int type)
+    {
+        currentControllerType = (controllerType)type;
     }
 
     private float MapValue(float x, float x1, float x2, float y1, float y2)

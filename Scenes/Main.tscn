@@ -79,7 +79,6 @@ anchor_bottom = 0.0
 margin_left = 636.0
 margin_right = 1268.0
 margin_bottom = 399.0
-ID = 1
 
 [node name="Row2" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/Rows"]
 margin_top = 403.0
@@ -94,7 +93,6 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 632.0
 margin_bottom = 400.0
-ID = 2
 
 [node name="C4" parent="VBoxContainer/ScrollContainer/Rows/Row2" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -102,7 +100,6 @@ anchor_bottom = 0.0
 margin_left = 636.0
 margin_right = 1268.0
 margin_bottom = 400.0
-ID = 3
 
 [node name="Row3" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/Rows"]
 margin_top = 807.0
@@ -117,7 +114,6 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 632.0
 margin_bottom = 400.0
-ID = 4
 
 [node name="C6" parent="VBoxContainer/ScrollContainer/Rows/Row3" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -125,7 +121,6 @@ anchor_bottom = 0.0
 margin_left = 636.0
 margin_right = 1268.0
 margin_bottom = 400.0
-ID = 5
 
 [node name="Row4" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/Rows"]
 margin_top = 1211.0
@@ -140,7 +135,6 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 632.0
 margin_bottom = 400.0
-ID = 6
 
 [node name="C8" parent="VBoxContainer/ScrollContainer/Rows/Row4" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -148,4 +142,3 @@ anchor_bottom = 0.0
 margin_left = 636.0
 margin_right = 1268.0
 margin_bottom = 400.0
-ID = 7
