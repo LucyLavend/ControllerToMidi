@@ -1,0 +1,139 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Code/ControllerInstrument.cs" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.686275, 0.678431, 0.776471, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.42152, 0.3984, 0.48, 1 )
+
+[sub_resource type="Theme" id=2]
+
+[node name="ControllerCard" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1260.0
+margin_bottom = 700.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/Panel/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1220.0
+margin_bottom = 660.0
+mouse_filter = 2
+custom_constants/separation = 7
+dragger_visibility = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/Panel/MarginContainer/HSplitContainer"]
+margin_right = 131.0
+margin_bottom = 640.0
+columns = 2
+
+[node name="Button" type="Button" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/GridContainer"]
+margin_right = 52.0
+margin_bottom = 20.0
+text = "Guitar"
+
+[node name="Button2" type="Button" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/GridContainer"]
+margin_left = 56.0
+margin_right = 131.0
+margin_bottom = 20.0
+text = "Controller"
+
+[node name="Button3" type="Button" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/GridContainer"]
+margin_top = 24.0
+margin_right = 52.0
+margin_bottom = 44.0
+text = "DJ pad"
+
+[node name="Panel" type="Panel" parent="MarginContainer/Panel/MarginContainer/HSplitContainer"]
+margin_left = 139.0
+margin_right = 1200.0
+margin_bottom = 640.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 3 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel"]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+custom_constants/margin_right = 7
+custom_constants/margin_top = 7
+custom_constants/margin_left = 7
+custom_constants/margin_bottom = 7
+
+[node name="GridContainer2" type="GridContainer" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 82.0
+margin_bottom = 99.0
+theme = SubResource( 2 )
+
+[node name="Button" type="Button" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer/GridContainer2"]
+margin_right = 75.0
+margin_bottom = 20.0
+text = "Guitar"
+
+[node name="Button2" type="Button" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer/GridContainer2"]
+margin_top = 24.0
+margin_right = 75.0
+margin_bottom = 44.0
+text = "Controller"
+
+[node name="Button3" type="Button" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer/GridContainer2"]
+margin_top = 48.0
+margin_right = 75.0
+margin_bottom = 68.0
+text = "DJ pad"
+
+[node name="Button4" type="Button" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer/GridContainer2"]
+margin_top = 72.0
+margin_right = 75.0
+margin_bottom = 92.0
+text = "DJ pad"
+
+[node name="ControllerNumber" type="Label" parent="MarginContainer/Panel/MarginContainer"]
+margin_left = 20.0
+margin_top = 333.0
+margin_right = 1220.0
+margin_bottom = 347.0
+text = "#1"
