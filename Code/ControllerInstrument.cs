@@ -10,6 +10,11 @@ public class ControllerInstrument : Control
     [Export]
     int ID = 0;
     [Export]
+    int octave = 0;
+    [Export]
+    int rootNote = 65;
+    
+    [Export]
     Color BGColor = Colors.LightCoral;
 
     public enum controllerType
@@ -25,16 +30,10 @@ public class ControllerInstrument : Control
     int midiChannel;
     string port = "controller port";
     Label debugText;
-    int rootNote = 65;
     int CCValue = 0;
 
     public override void _Ready()
     {
-        // Panel BGPanel = GetNode("MarginContainer/Panel") as Panel;
-        // BGPanel.GetStylebox("panel").BGColor = BGColor;
-        GD.Print(Godot.Input.GetJoyName(0));
-        GD.Print(Godot.Input.GetJoyGuid(0));
-
         GetNode<Label>("MarginContainer/Panel/MarginContainer/HSplitContainer/GridContainer/ControllerNumber").Text = "#" + (ID + 1);
 
         debugText = GetTree().Root.GetNode("Main/VBoxContainer/DebugText") as Label;
@@ -59,14 +58,13 @@ public class ControllerInstrument : Control
         // ListenForAnalog("C1LeftStickUp", 80);
         if (currentControllerType == controllerType.Controller)
         {
-            ListenForInput("C1B1", rootNote);
-            ListenForInput("C1B2", rootNote + 2);
-            ListenForInput("C1B3", rootNote + 3);
-            ListenForInput("C1B4", rootNote + 5);
-            ListenForInput("C1B5", rootNote + 7);
-            ListenForInput("C1B6", rootNote + 8);
+            ListenForInput("C1B1", rootNote + octave);
+            ListenForInput("C1B2", rootNote + octave + 2);
+            ListenForInput("C1B3", rootNote + octave + 3);
+            ListenForInput("C1B4", rootNote + octave + 5);
+            ListenForInput("C1B5", rootNote + octave + 7);
+            ListenForInput("C1B6", rootNote + octave + 8);
         }
-        GD.Print(currentControllerType);
 
         //GD.Print(Input.GetActionStrength("Whammy"));
     }

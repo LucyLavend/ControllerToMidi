@@ -45,7 +45,7 @@ mouse_filter = 2
 [node name="DebugText" type="Label" parent="VBoxContainer"]
 margin_right = 1280.0
 margin_bottom = 46.0
-text = "Debug text"
+text = "[Debug output]"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
 margin_top = 50.0
@@ -56,7 +56,7 @@ scroll_horizontal_enabled = false
 
 [node name="Rows" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
 margin_right = 1268.0
-margin_bottom = 1611.0
+margin_bottom = 1207.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -72,6 +72,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 632.0
 margin_bottom = 399.0
+BGColor = Color( 0.501961, 0.65098, 0.941176, 1 )
 
 [node name="C2" parent="VBoxContainer/ScrollContainer/Rows/Row1" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -79,6 +80,7 @@ anchor_bottom = 0.0
 margin_left = 636.0
 margin_right = 1268.0
 margin_bottom = 399.0
+ID = 1
 
 [node name="Row2" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/Rows"]
 margin_top = 403.0
@@ -93,6 +95,8 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 632.0
 margin_bottom = 400.0
+ID = 2
+BGColor = Color( 0.596078, 0.941176, 0.501961, 1 )
 
 [node name="C4" parent="VBoxContainer/ScrollContainer/Rows/Row2" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -100,6 +104,8 @@ anchor_bottom = 0.0
 margin_left = 636.0
 margin_right = 1268.0
 margin_bottom = 400.0
+ID = 3
+BGColor = Color( 0.941176, 0.901961, 0.501961, 1 )
 
 [node name="Row3" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/Rows"]
 margin_top = 807.0
@@ -114,6 +120,8 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 632.0
 margin_bottom = 400.0
+ID = 4
+BGColor = Color( 0.941176, 0.501961, 0.901961, 1 )
 
 [node name="C6" parent="VBoxContainer/ScrollContainer/Rows/Row3" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -121,8 +129,11 @@ anchor_bottom = 0.0
 margin_left = 636.0
 margin_right = 1268.0
 margin_bottom = 400.0
+ID = 5
+BGColor = Color( 0.501961, 0.529412, 0.941176, 1 )
 
 [node name="Row4" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/Rows"]
+visible = false
 margin_top = 1211.0
 margin_right = 1268.0
 margin_bottom = 1611.0
@@ -135,6 +146,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 632.0
 margin_bottom = 400.0
+ID = 6
 
 [node name="C8" parent="VBoxContainer/ScrollContainer/Rows/Row4" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -142,3 +154,4 @@ anchor_bottom = 0.0
 margin_left = 636.0
 margin_right = 1268.0
 margin_bottom = 400.0
+ID = 7
