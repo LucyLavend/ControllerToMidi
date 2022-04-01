@@ -49,7 +49,6 @@ public class ControllerInstrument : Control
     public override void _Process(float delta)
     {
         string controllerNumber = "C" + (ID + 1);
-        // ListenForAnalog("C1LeftStickUp", 80);
         if (currentControllerType == controllerType.Controller)
         {
             ListenForInput(controllerNumber + "B0", rootNote + offset);
@@ -59,31 +58,44 @@ public class ControllerInstrument : Control
             ListenForInput(controllerNumber + "B4", rootNote + offset + 7);
             ListenForInput(controllerNumber + "B5", rootNote + offset + 8);
 
-            var horizontal = Input.GetActionRawStrength("right") - Input.GetActionRawStrength("left");
-            ListenForAnalog("C1LeftStickUp", 80);
+            //var horizontal = Input.GetActionRawStrength("right") - Input.GetActionRawStrength("left");
+            //ListenForAnalog("C1LeftStickUp", 80);
         }
-        if (currentControllerType == controllerType.Guitar)
+        if (currentControllerType == controllerType.Guitar && midiChannel == 2)
         {
             ListenForInput(controllerNumber + "B0", rootNote + offset);
             ListenForInput(controllerNumber + "B1", rootNote + offset + 2);
             ListenForInput(controllerNumber + "B3", rootNote + offset + 3);
             ListenForInput(controllerNumber + "B2", rootNote + offset + 5);
             ListenForInput(controllerNumber + "B4", rootNote + offset + 7);
-            ListenForInput(controllerNumber + "B12", rootNote + offset + 8);
+            ListenForInput(controllerNumber + "B12", rootNote + offset - 5);
             ListenForInput(controllerNumber + "B13", rootNote + offset + 10);
         }
-        if (currentControllerType == controllerType.DJPad)
+        if (currentControllerType == controllerType.Guitar && midiChannel == 3)
         {
+            offset = -12;
             ListenForInput(controllerNumber + "B0", rootNote + offset);
             ListenForInput(controllerNumber + "B1", rootNote + offset + 2);
-            ListenForInput(controllerNumber + "B2", rootNote + offset + 3);
-            ListenForInput(controllerNumber + "B3", rootNote + offset + 5);
+            ListenForInput(controllerNumber + "B3", rootNote + offset + 3);
+            ListenForInput(controllerNumber + "B2", rootNote + offset + 5);
             ListenForInput(controllerNumber + "B4", rootNote + offset + 7);
-            ListenForInput(controllerNumber + "B5", rootNote + offset + 8);
-
-            
+            ListenForInput(controllerNumber + "B12", rootNote + offset - 5);
+            ListenForInput(controllerNumber + "B13", rootNote + offset + 10);
         }
 
+
+        if (currentControllerType == controllerType.DJPad)
+        {
+            ListenForInput(controllerNumber + "B3", rootNote + offset);
+            ListenForAnalog("C4A0", 80);
+
+        }
+        offset = 0;
+
+
+        if (Input.IsActionJustPressed("fullscreen")){
+            OS.WindowFullscreen = !OS.WindowFullscreen;
+        }
         //GD.Print(Input.GetActionStrength("Whammy"));
     }
 

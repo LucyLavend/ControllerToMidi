@@ -330,6 +330,271 @@ C3B16={
 "events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":2,"button_index":16,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
+C4B0={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":3,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C4B1={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":3,"button_index":1,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C4B2={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":3,"button_index":2,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C4B3={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":3,"button_index":3,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C4B4={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":3,"button_index":4,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C4B5={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":3,"button_index":5,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C4B6={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":3,"button_index":6,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C4B7={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":3,"button_index":7,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C4B8={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":3,"button_index":8,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C4B9={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":3,"button_index":9,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C4B10={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":3,"button_index":10,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C4B11={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":3,"button_index":11,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C4B12={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":3,"button_index":12,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C4B13={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":3,"button_index":13,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C4B14={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":3,"button_index":14,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C4B15={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":3,"button_index":15,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C4B16={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":3,"button_index":16,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C5B0={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":4,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C5B1={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":4,"button_index":1,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C5B2={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":4,"button_index":2,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C5B3={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":4,"button_index":3,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C5B4={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":4,"button_index":4,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C5B5={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":4,"button_index":5,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C5B6={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":4,"button_index":6,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C5B7={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":4,"button_index":7,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C5B8={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":4,"button_index":8,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C5B9={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":4,"button_index":9,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C5B10={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":4,"button_index":10,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C5B11={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":4,"button_index":11,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C5B12={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":4,"button_index":12,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C5B13={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":4,"button_index":13,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C5B14={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":4,"button_index":14,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C5B15={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":4,"button_index":15,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C5B16={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":4,"button_index":16,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C6B0={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":5,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C6B1={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":5,"button_index":1,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C6B2={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":5,"button_index":2,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C6B3={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":5,"button_index":3,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C6B4={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":5,"button_index":4,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C6B5={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":5,"button_index":5,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C6B6={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":5,"button_index":6,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C6B7={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":5,"button_index":7,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C6B8={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":5,"button_index":8,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C6B9={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":5,"button_index":9,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C6B10={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":5,"button_index":10,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C6B11={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":5,"button_index":11,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C6B12={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":5,"button_index":12,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C6B13={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":5,"button_index":13,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C6B14={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":5,"button_index":14,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C6B15={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":5,"button_index":15,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+C6B16={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":5,"button_index":16,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+fullscreen={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":70,"unicode":0,"echo":false,"script":null)
+ ]
+}
+C4A0={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":3,"axis_value":1.0,"script":null)
+ ]
+}
 
 [input_devices]
 
