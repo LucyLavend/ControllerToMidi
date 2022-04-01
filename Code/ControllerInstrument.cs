@@ -10,7 +10,7 @@ public class ControllerInstrument : Control
     [Export]
     int ID = 0;
     [Export]
-    int octave = 0;
+    int offset = 0;
     [Export]
     int rootNote = 65;
     
@@ -48,22 +48,40 @@ public class ControllerInstrument : Control
 
     public override void _Process(float delta)
     {
-        // ListenForInput("C1A", rootNote);
-        // ListenForInput("C1X", rootNote + 2);
-        // ListenForInput("C1Y", rootNote + 3);
-        // ListenForInput("C1B", rootNote + 5);
-        // ListenForInput("C1BR", rootNote + 7);
-        // ListenForInput("C1BL", rootNote + 8);
-
+        string controllerNumber = "C" + (ID + 1);
         // ListenForAnalog("C1LeftStickUp", 80);
         if (currentControllerType == controllerType.Controller)
         {
-            ListenForInput("C1B1", rootNote + octave);
-            ListenForInput("C1B2", rootNote + octave + 2);
-            ListenForInput("C1B3", rootNote + octave + 3);
-            ListenForInput("C1B4", rootNote + octave + 5);
-            ListenForInput("C1B5", rootNote + octave + 7);
-            ListenForInput("C1B6", rootNote + octave + 8);
+            ListenForInput(controllerNumber + "B0", rootNote + offset);
+            ListenForInput(controllerNumber + "B1", rootNote + offset + 2);
+            ListenForInput(controllerNumber + "B2", rootNote + offset + 3);
+            ListenForInput(controllerNumber + "B3", rootNote + offset + 5);
+            ListenForInput(controllerNumber + "B4", rootNote + offset + 7);
+            ListenForInput(controllerNumber + "B5", rootNote + offset + 8);
+
+            var horizontal = Input.GetActionRawStrength("right") - Input.GetActionRawStrength("left");
+            ListenForAnalog("C1LeftStickUp", 80);
+        }
+        if (currentControllerType == controllerType.Guitar)
+        {
+            ListenForInput(controllerNumber + "B0", rootNote + offset);
+            ListenForInput(controllerNumber + "B1", rootNote + offset + 2);
+            ListenForInput(controllerNumber + "B3", rootNote + offset + 3);
+            ListenForInput(controllerNumber + "B2", rootNote + offset + 5);
+            ListenForInput(controllerNumber + "B4", rootNote + offset + 7);
+            ListenForInput(controllerNumber + "B12", rootNote + offset + 8);
+            ListenForInput(controllerNumber + "B13", rootNote + offset + 10);
+        }
+        if (currentControllerType == controllerType.DJPad)
+        {
+            ListenForInput(controllerNumber + "B0", rootNote + offset);
+            ListenForInput(controllerNumber + "B1", rootNote + offset + 2);
+            ListenForInput(controllerNumber + "B2", rootNote + offset + 3);
+            ListenForInput(controllerNumber + "B3", rootNote + offset + 5);
+            ListenForInput(controllerNumber + "B4", rootNote + offset + 7);
+            ListenForInput(controllerNumber + "B5", rootNote + offset + 8);
+
+            
         }
 
         //GD.Print(Input.GetActionStrength("Whammy"));
@@ -81,10 +99,10 @@ public class ControllerInstrument : Control
         }
     }
 
-    private void ListenForAnalog(string actionName, int CC, int minValue = 0, int maxValue = 127)
+    private void ListenForAnalog(string actionName, int CC, double minActionStrength = 0.0, double maxActionStrength = 1.0, int minValue = 0, int maxValue = 127)
     {
         float oldCCValue = CCValue;
-        CCValue = (int)MapValue(Input.GetActionStrength(actionName), 0f, 1f, 0f, 127f);
+        CCValue = (int)MapValue(Input.GetActionStrength(actionName), (float)minActionStrength, (float)maxActionStrength, 0f, 127f);
         // CCValue = (int)MapValue(Input.GetActionStrength(actionName), 0f, 1f, 64f, 96f);
         if (CCValue != oldCCValue)
         {

@@ -16,10 +16,8 @@ func _ready():
 
 func _input(event):
 	if event is InputEventJoypadButton:
-		print(event.device)
 		if event.device == parent.ID:
 			if event.is_pressed():
 				set('custom_styles/panel', active_style)
-				print(parent.ID)
 			else:
 				set('custom_styles/panel', inactive_style)

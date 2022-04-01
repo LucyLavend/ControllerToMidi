@@ -18,9 +18,6 @@ func _ready():
 	type_buttons.append(guitar_button)
 	type_buttons.append(DJPad_button)
 
-func _process(delta):
-	pass
-
 func reset_colors():
 	for i in type_buttons:
 		i.set("custom_styles/focus", disabled_style)
