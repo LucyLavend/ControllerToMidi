@@ -95,42 +95,52 @@ public class ControllerInstrument : Control
         {
             ListenForInput(controllerNumber + "B3", rootNote + offset);
             ListenForAnalog(Input.GetActionStrength(controllerNumber + "A3P") - Input.GetActionStrength(controllerNumber + "A3M"), 80, -1.0, 1.0, 45, 127);
-            ListenForAnalog(Input.GetActionStrength(controllerNumber + "A2P") - Input.GetActionStrength(controllerNumber + "A2M"), 81, -1.0, 1.0, 0, 127);
+            ListenForAnalog(Input.GetActionStrength(controllerNumber + "A2P") - Input.GetActionStrength(controllerNumber + "A2M"), 81, -1.0, 1.0, 62, 127);
         }
 
 
         if (currentControllerType == controllerType.DJPad && midiChannel == 5)
         {
-            float sliderValue = Input.GetActionStrength(controllerNumber + "A3P") - Input.GetActionStrength(controllerNumber + "A3M";
+            float sliderValueStrings = Input.GetActionStrength(controllerNumber + "A3P") - Input.GetActionStrength(controllerNumber + "A3M");
 
-            if (Input.IsActionJustPressed(controllerNumber + "B3"))
+            if (sliderValueStrings >= 0.33)
             {
+                ListenForInput(controllerNumber + "B3", rootNote + offset);
+                ListenForInput(controllerNumber + "B3", rootNote + offset + 3);
+                ListenForInput(controllerNumber + "B3", rootNote + offset + 7);
+            }
+            else if (sliderValueStrings >= -0.33)
+            {
+                offset = 2;
+                ListenForInput(controllerNumber + "B3", rootNote + offset);
+                ListenForInput(controllerNumber + "B3", rootNote + offset + 3);
+                ListenForInput(controllerNumber + "B3", rootNote + offset + 7);
+            }
+            else if (sliderValueStrings >= -1.0)
+            {
+                offset = 7;
+                ListenForInput(controllerNumber + "B3", rootNote + offset);
+                ListenForInput(controllerNumber + "B3", rootNote + offset + 3);
+                ListenForInput(controllerNumber + "B3", rootNote + offset + 7);
+            }
 
-                if (sliderValue >= 0.33)
-                {
-                    ListenForInput(controllerNumber + "B3", rootNote + offset);
-                    ListenForInput(controllerNumber + "B3", rootNote + offset + 3);
-                    ListenForInput(controllerNumber + "B3", rootNote + offset + 7);
-                }
-                else if (sliderValue >= -0.33)
-                {
-                    offset = 2;
-                    ListenForInput(controllerNumber + "B3", rootNote + offset);
-                    ListenForInput(controllerNumber + "B3", rootNote + offset + 3);
-                    ListenForInput(controllerNumber + "B3", rootNote + offset + 7);
-                }
-                else if (sliderValue >= -1.0)
-                {
-                    offset = 7;
-
-                    ListenForInput(controllerNumber + "B3", rootNote + offset);
-                    ListenForInput(controllerNumber + "B3", rootNote + offset + 3);
-                    ListenForInput(controllerNumber + "B3", rootNote + offset + 7);
-                }
+            if (Input.IsActionJustReleased(controllerNumber + "B3")){
+                offset = 0;
+                stopNote(rootNote + offset);
+                stopNote(rootNote + offset + 3);
+                stopNote(rootNote + offset + 7);
+                offset = 2;
+                stopNote(rootNote + offset);
+                stopNote(rootNote + offset + 3);
+                stopNote(rootNote + offset + 7);
+                offset = 7;
+                stopNote(rootNote + offset);
+                stopNote(rootNote + offset + 3);
+                stopNote(rootNote + offset + 7);
             }
 
 
-            ListenForAnalog(Input.GetActionStrength(controllerNumber + "A2P") - Input.GetActionStrength(controllerNumber + "A2M"), 82, -1.0, 1.0, 0, 127);
+            ListenForAnalog(Input.GetActionStrength(controllerNumber + "A2P") - Input.GetActionStrength(controllerNumber + "A2M"), 82, -1.0, 1.0, 45, 127);
         }
 
         offset = 0;

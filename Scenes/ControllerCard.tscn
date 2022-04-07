@@ -246,7 +246,7 @@ margin_right = 75.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Stings"
+text = "Strings"
 
 [connection signal="pressed" from="MarginContainer/Panel/MarginContainer/HSplitContainer/GridContainer/Controller" to="." method="ChangeControllerType" binds= [ 0 ]]
 [connection signal="pressed" from="MarginContainer/Panel/MarginContainer/HSplitContainer/GridContainer/Controller" to="ButtonColorManager" method="highlight_button" binds= [ 0 ]]
