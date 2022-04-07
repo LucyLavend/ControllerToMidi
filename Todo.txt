@@ -1,0 +1,10 @@
+
+	djpad 1: pot meter = reverb
+	
+	djpad 2: low pass filder op pot meter
+	
+	djpad 2: verschillende akkoorden:
+		
+		F mineur
+		G mineur
+		C mineur

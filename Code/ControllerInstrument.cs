@@ -13,7 +13,7 @@ public class ControllerInstrument : Control
     int offset = 0;
     [Export]
     int rootNote = 65;
-    
+
     [Export]
     Color BGColor = Colors.LightCoral;
 
@@ -49,6 +49,9 @@ public class ControllerInstrument : Control
     public override void _Process(float delta)
     {
         string controllerNumber = "C" + (ID + 1);
+
+        //########################## Controller ########################
+
         if (currentControllerType == controllerType.Controller)
         {
             ListenForInput(controllerNumber + "B0", rootNote + offset);
@@ -61,6 +64,9 @@ public class ControllerInstrument : Control
             //var horizontal = Input.GetActionRawStrength("right") - Input.GetActionRawStrength("left");
             //ListenForAnalog("C1LeftStickUp", 80);
         }
+
+        //############################ Guitars ########################
+
         if (currentControllerType == controllerType.Guitar && midiChannel == 2)
         {
             ListenForInput(controllerNumber + "B0", rootNote + offset);
@@ -83,17 +89,55 @@ public class ControllerInstrument : Control
             ListenForInput(controllerNumber + "B13", rootNote + offset + 10);
         }
 
+        //######################## DJPad ########################
 
-        if (currentControllerType == controllerType.DJPad)
+        if (currentControllerType == controllerType.DJPad && midiChannel == 4)
         {
             ListenForInput(controllerNumber + "B3", rootNote + offset);
-            ListenForAnalog("C4A0", 80);
-
+            ListenForAnalog(Input.GetActionStrength(controllerNumber + "A3P") - Input.GetActionStrength(controllerNumber + "A3M"), 80, -1.0, 1.0, 45, 127);
+            ListenForAnalog(Input.GetActionStrength(controllerNumber + "A2P") - Input.GetActionStrength(controllerNumber + "A2M"), 81, -1.0, 1.0, 0, 127);
         }
+
+
+        if (currentControllerType == controllerType.DJPad && midiChannel == 5)
+        {
+            float sliderValue = Input.GetActionStrength(controllerNumber + "A3P") - Input.GetActionStrength(controllerNumber + "A3M";
+
+            if (Input.IsActionJustPressed(controllerNumber + "B3"))
+            {
+
+                if (sliderValue >= 0.33)
+                {
+                    ListenForInput(controllerNumber + "B3", rootNote + offset);
+                    ListenForInput(controllerNumber + "B3", rootNote + offset + 3);
+                    ListenForInput(controllerNumber + "B3", rootNote + offset + 7);
+                }
+                else if (sliderValue >= -0.33)
+                {
+                    offset = 2;
+                    ListenForInput(controllerNumber + "B3", rootNote + offset);
+                    ListenForInput(controllerNumber + "B3", rootNote + offset + 3);
+                    ListenForInput(controllerNumber + "B3", rootNote + offset + 7);
+                }
+                else if (sliderValue >= -1.0)
+                {
+                    offset = 7;
+
+                    ListenForInput(controllerNumber + "B3", rootNote + offset);
+                    ListenForInput(controllerNumber + "B3", rootNote + offset + 3);
+                    ListenForInput(controllerNumber + "B3", rootNote + offset + 7);
+                }
+            }
+
+
+            ListenForAnalog(Input.GetActionStrength(controllerNumber + "A2P") - Input.GetActionStrength(controllerNumber + "A2M"), 82, -1.0, 1.0, 0, 127);
+        }
+
         offset = 0;
 
 
-        if (Input.IsActionJustPressed("fullscreen")){
+        if (Input.IsActionJustPressed("fullscreen"))
+        {
             OS.WindowFullscreen = !OS.WindowFullscreen;
         }
         //GD.Print(Input.GetActionStrength("Whammy"));
@@ -111,10 +155,10 @@ public class ControllerInstrument : Control
         }
     }
 
-    private void ListenForAnalog(string actionName, int CC, double minActionStrength = 0.0, double maxActionStrength = 1.0, int minValue = 0, int maxValue = 127)
+    private void ListenForAnalog(float actionStrength, int CC, double minActionStrength = 0.0, double maxActionStrength = 1.0, float minValue = 0, float maxValue = 127)
     {
         float oldCCValue = CCValue;
-        CCValue = (int)MapValue(Input.GetActionStrength(actionName), (float)minActionStrength, (float)maxActionStrength, 0f, 127f);
+        CCValue = (int)MapValue(actionStrength, (float)minActionStrength, (float)maxActionStrength, minValue, maxValue);
         // CCValue = (int)MapValue(Input.GetActionStrength(actionName), 0f, 1f, 64f, 96f);
         if (CCValue != oldCCValue)
         {

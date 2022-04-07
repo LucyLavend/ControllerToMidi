@@ -194,7 +194,7 @@ margin_right = 1030.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Arp"
+text = "Rhodes"
 
 [node name="Guitars" type="GridContainer" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer"]
 visible = false
@@ -238,7 +238,7 @@ margin_right = 75.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Pad"
+text = "Arp"
 
 [node name="Button2" type="Button" parent="MarginContainer/Panel/MarginContainer/HSplitContainer/Panel/MarginContainer/DJPad"]
 margin_top = 24.0
@@ -246,7 +246,7 @@ margin_right = 75.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Pad 2"
+text = "Stings"
 
 [connection signal="pressed" from="MarginContainer/Panel/MarginContainer/HSplitContainer/GridContainer/Controller" to="." method="ChangeControllerType" binds= [ 0 ]]
 [connection signal="pressed" from="MarginContainer/Panel/MarginContainer/HSplitContainer/GridContainer/Controller" to="ButtonColorManager" method="highlight_button" binds= [ 0 ]]
